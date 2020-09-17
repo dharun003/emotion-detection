@@ -49,8 +49,7 @@ test_y = np.array(test_y,'float32')
 train_y=np_utils.to_categorical(train_y, num_classes=num_labels)
 test_y=np_utils.to_categorical(test_y, num_classes=num_labels)
 
-#cannot produce
-#normalizing data between oand 1
+
 X_train -= np.mean(X_train, axis=0)
 X_train /= np.std(X_train, axis=0)
 
@@ -111,7 +110,7 @@ model.fit(X_train, train_y,
           shuffle=True)
 
 
-#Saving the  model to  use it later on
+#Saving the  model 
 fer_json = model.to_json()
 with open("fer.json", "w") as json_file:
     json_file.write(fer_json)
